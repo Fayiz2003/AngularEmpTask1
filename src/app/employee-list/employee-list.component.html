@@ -1,0 +1,64 @@
+<div class="container my-5">
+    <h1 class="text-center text-primary fw-bold mb-4">Employee List</h1>
+    <div class="d-flex justify-content-end mb-3">
+      <!-- ADD Employee Button -->
+      <button class="btn btn-success shadow" (click)="openAddEmployeeModal()">
+        + Add Employee
+      </button>
+    </div>
+  
+    <!-- Employee Table -->
+    <table class="table table-bordered table-striped shadow">
+      <thead class="bg-primary text-white text-center">
+        <tr>
+          <th>Employee Name</th>
+          <th>Contact No</th>
+          <th>Email</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTableBody">
+        <!-- Dynamic rows will be added here -->
+      </tbody>
+    </table>
+  
+    <!-- Add Employee Modal -->
+    <div 
+      class="modal" 
+      tabindex="-1" 
+      [class.show]="showModal" 
+      (click)="closeModal($event)">
+      <div class="modal-dialog modal-dialog-centered" (click)="stopPropagation($event)">
+        <div class="modal-content shadow-lg">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Add Employee Page</h5>
+            <button type="button" class="btn-close" (click)="closeModal()"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Input Fields -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Employee Name</label>
+              <input [(ngModel)]="newEmployee.name" id="name" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact No</label>
+              <input [(ngModel)]="newEmployee.contact" id="contact" type="text" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input [(ngModel)]="newEmployee.email" id="email" type="email" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea [(ngModel)]="newEmployee.address" id="address" class="form-control"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- Submit Button -->
+            <button class="btn btn-success" (click)="addEmployee()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

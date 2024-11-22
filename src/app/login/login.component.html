@@ -1,0 +1,14 @@
+<div class="container my-5">
+  <div class="d-flex flex-column align-items-center justify-content-center py-5 shadow-lg rounded bg-light" style="max-width: 500px; margin: auto;">
+    <h1 class="text-center fw-bold text-primary mb-4">Employee Management</h1>
+    <p class="text-muted text-center mb-4">Please log in to manage employees</p>
+    
+   
+    
+    <!-- Bind username and password to the component -->
+    <input [(ngModel)]="username" class="form-control mb-3 border-primary text-center" type="text" placeholder="Username" style="max-width: 300px;" />
+    <input [(ngModel)]="password" class="form-control mb-4 border-primary text-center" type="password" placeholder="Password" style="max-width: 300px;" />
+    
+    <button (click)="onLogin()" class="btn btn-primary w-100" style="max-width: 300px;">Log In</button>
+  </div>
+</div>
